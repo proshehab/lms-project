@@ -23,7 +23,7 @@ class AccountController extends Controller
             return response()->json([
                 'status'=>400,
                 'errors'=>$validator->errors()
-            ]);
+            ],400);
         }
 
         // Now save user info in database
@@ -36,6 +36,41 @@ class AccountController extends Controller
         return response()->json([
             'status'=>200,
             'message' => 'User registerd successfully'
+        ],200);
+    }
+
+    public function  authenticate(Request $request){
+
+        $validator = Validator::make($request->all(),[
+            'email'=> 'required|email',
+            'password'=>'required',
+        ]);
+
+        // This will return validator errors
+        if($validator->fails()){
+            return response()->json([
+                'status'=>400,
+                'errors'=>$validator->errors()
+            ],400);
+        }
+
+        // Now check user credentials
+        $user = User::where('email',$request->email)->first();
+
+        if(!$user || !Hash::check($request->password,$user->password)){
+            return response()->json([
+                'status'=>401,
+                'message' => 'Invalid email or password'
+            ],401);
+        }
+
+        // Generate token for user
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'status'=>200,
+            'message' => 'Login successful',
+            'token' => $token
         ],200);
     }
     
