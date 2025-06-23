@@ -11,6 +11,7 @@ import CoursesEnrolled from "./components/pages/account/CoursesEnrolled";
 import ChangePassword from "./components/pages/account/ChangePassword";
 import { Toaster } from "react-hot-toast"
 import Dashboard from "./components/pages/account/Dashboard";
+import { RequireAuth } from "./components/commom/RequireAuth";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,7 +32,14 @@ function App() {
             element={<CoursesEnrolled />}
           />
           <Route path="/account/change-password" element={<ChangePassword />} />
-           <Route path="/account/dashboard" element={<Dashboard />} />
+            {/* <Route path="/account/dashboard" element={<Dashboard />} /> */}
+          <Route path="/account/dashboard" element={
+            
+            <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        } />
+
         </Routes>
       </BrowserRouter>
 

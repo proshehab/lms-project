@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import Layout from "../../commom/Layout";
 import { useForm } from "react-hook-form";
 import { apiUrl } from "../../commom/Config";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../context/Auth";
 
 const Login = () => {
+  const {login} = useContext(AuthContext);
     const navigate = useNavigate();
     const{handleSubmit, register,formState: {errors}, setError} = useForm();
 
@@ -29,6 +31,7 @@ const Login = () => {
           token: result.token,
          }
          localStorage.setItem('userInfo',JSON.stringify(userInfo));
+         login(userInfo)
           navigate('/account/dashboard');
         }else{
           toast.error(result.message);
