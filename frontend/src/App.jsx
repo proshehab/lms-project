@@ -9,6 +9,7 @@ import MyCourses from "./components/pages/account/MyCourses";
 import WatchCourses from "./components/pages/account/WatchCourses";
 import CoursesEnrolled from "./components/pages/account/CoursesEnrolled";
 import ChangePassword from "./components/pages/account/ChangePassword";
+import { Toaster } from "react-hot-toast"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,6 +32,12 @@ function App() {
           <Route path="/account/change-password" element={<ChangePassword />} />
         </Routes>
       </BrowserRouter>
+
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        />
+        
     </>
   );
 }
