@@ -12,9 +12,10 @@ import ChangePassword from "./components/pages/account/ChangePassword";
 import { Toaster } from "react-hot-toast"
 import Dashboard from "./components/pages/account/Dashboard";
 import { RequireAuth } from "./components/commom/RequireAuth";
+import CreateCourse from "./components/pages/account/courses/CreateCourse";
 
 function App() {
-  const [count, setCount] = useState(0);
+   
 
   return (
     <>
@@ -37,6 +38,13 @@ function App() {
             
             <RequireAuth>
             <Dashboard />
+          </RequireAuth>
+        } />
+
+          <Route path="/account/courses/create" element={
+
+            <RequireAuth>
+            <CreateCourse />
           </RequireAuth>
         } />
 
