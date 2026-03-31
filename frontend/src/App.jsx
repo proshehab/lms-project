@@ -9,14 +9,12 @@ import MyCourses from "./components/pages/account/MyCourses";
 import WatchCourses from "./components/pages/account/WatchCourses";
 import CoursesEnrolled from "./components/pages/account/CoursesEnrolled";
 import ChangePassword from "./components/pages/account/ChangePassword";
-import { Toaster } from "react-hot-toast"
+import { Toaster } from "react-hot-toast";
 import Dashboard from "./components/pages/account/Dashboard";
 import { RequireAuth } from "./components/commom/RequireAuth";
 import CreateCourse from "./components/pages/account/courses/CreateCourse";
 
 function App() {
-   
-
   return (
     <>
       <BrowserRouter>
@@ -33,29 +31,21 @@ function App() {
             element={<CoursesEnrolled />}
           />
           <Route path="/account/change-password" element={<ChangePassword />} />
-            {/* <Route path="/account/dashboard" element={<Dashboard />} /> */}
-          <Route path="/account/dashboard" element={
-            
-            <RequireAuth>
-            <Dashboard />
-          </RequireAuth>
-        } />
+          {/* <Route path="/account/dashboard" element={<Dashboard />} /> */}
+          <Route
+            path="/account/dashboard"
+            element={
+              <RequireAuth>
+                <Dashboard />
+              </RequireAuth>
+            }
+          />
 
-          <Route path="/account/courses/create" element={
-
-            <RequireAuth>
-            <CreateCourse />
-          </RequireAuth>
-        } />
-
+          <Route path="/account/courses/create" element={<CreateCourse />} />
         </Routes>
       </BrowserRouter>
 
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-        />
-        
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 }
