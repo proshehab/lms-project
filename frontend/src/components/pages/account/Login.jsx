@@ -28,16 +28,10 @@ const Login = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.status == 200) {
-          const userInfo = {
-            name: result.name,
-            id: result.id,
-            token: result.token,
-          };
-          localStorage.setItem("userInfoLms", JSON.stringify(userInfo));
-          login(userInfo);
-          navigate("/account/dashboard");
+          
+          navigate("/account/login");
         } else {
-          toast.error(result.message);
+         toast.error(result.message);
         }
       });
   };

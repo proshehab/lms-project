@@ -29,7 +29,12 @@ const CreateCourse = () => {
             </div>
             <div className="col-lg-9">
               <div className="row">
-                
+                <form>
+                    <div className="mb3">
+                        <label htmlFor="courseTitle" className="form-label">Course Title</label>
+                        <input type="text" className="form-control" id="courseTitle" placeholder="Enter course title" />  
+                    </div>
+                </form>
               </div>
             </div>
           </div>
