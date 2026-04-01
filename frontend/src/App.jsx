@@ -43,9 +43,9 @@ function App() {
 
           <Route path="/account/courses/create" element={
 
-            
+            <RequireAuth>
             <CreateCourse />
-          
+          </RequireAuth>
         } />
 
         </Routes>
