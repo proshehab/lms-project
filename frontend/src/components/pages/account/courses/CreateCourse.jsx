@@ -28,7 +28,9 @@ const CreateCourse = () => {
               <UserSidebar />
             </div>
             <div className="col-lg-9">
-              <div className="row"></div>
+              <div className="row">
+                
+              </div>
             </div>
           </div>
         </div>
