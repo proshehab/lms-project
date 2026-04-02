@@ -11,7 +11,7 @@ const Register = () => {
 
 
   const onSubmit = async (data) => {
-      await fetch (`${apiUrl}/register`,{
+      await fetch (`${apiUrl}/register`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
