@@ -4,10 +4,8 @@ import Layout from "../../commom/Layout";
 import { useForm } from "react-hook-form";
 import { apiUrl } from "../../commom/Config";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../context/Auth";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const {
     handleSubmit,
@@ -28,10 +26,9 @@ const Login = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.status == 200) {
-          
           navigate("/account/login");
         } else {
-         toast.error(result.message);
+          toast.error(result.message);
         }
       });
   };
