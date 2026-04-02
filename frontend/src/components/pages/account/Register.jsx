@@ -27,9 +27,9 @@ const Register = () => {
           navigate('/account/login');
         }else{
           const errors = result.errors;
-          Object.keys(errors).forEach(field => {
-            setError(field,{message: errors[field][0]})
-          })
+         Object.keys(errors).forEach(field => {
+  setError(field, { message: errors[field][0] })
+})
         }
       });
     
