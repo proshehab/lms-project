@@ -23,7 +23,7 @@ const UserSidebar = () => {
             </Link>
           </li>
           <li className="d-flex align-items-center">
-            <Link to="/account/my-courses">
+            <Link to="/account/courses">
               <FaDesktop size={16} className="me-2" /> My Courses
             </Link>
           </li>

@@ -28,6 +28,7 @@ function App() {
           <Route path="/account/register" element={<Register />} />
           <Route path="/account/my-courses" element={<MyCourses />} />
           <Route path="/account/watch-courses" element={<WatchCourses />} />
+          
           <Route
             path="/account/courses-enrolled"
             element={<CoursesEnrolled />}

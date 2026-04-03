@@ -3,20 +3,21 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
 {
-    public function index(){
+    public function index() {}
 
-    }
-
-    public function store(Request $request){
-        $validator = Validator::make($request->all(),[
-            'title' =>'required|min:5'
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|min:5'
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return response()->json([
                 'status' => 400,
                 'errors' => $validator->errors()
@@ -32,6 +33,6 @@ class CourseController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Course created successfully',
-        ],200);
+        ], 200);
     }
 }
