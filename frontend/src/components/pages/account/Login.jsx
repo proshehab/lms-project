@@ -21,7 +21,13 @@ const Login = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.status == 200) {
-          navigate("/account/login");
+          const userInfo = {
+            name: result.name,
+            id: result.id,
+            token: result.token,
+          }
+          localStorage.setItem('userInfo', JSON.stringify(userInfo));
+          navigate("/account/dashboard");
         } else {
           toast.error(result.message);
           // Object.keys(errors).forEach(field => {

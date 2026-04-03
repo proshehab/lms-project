@@ -36,9 +36,9 @@ function App() {
             {/* <Route path="/account/dashboard" element={<Dashboard />} /> */}
           <Route path="/account/dashboard" element={
             
-            <RequireAuth>
+          
             <Dashboard />
-          </RequireAuth>
+          
         } />
 
           <Route path="/account/courses/create" element={
