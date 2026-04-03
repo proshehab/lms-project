@@ -30,7 +30,7 @@ const Login = () => {
             id: result.id,
             token: result.token,
           }
-          localStorage.setItem('userInfo', JSON.stringify(userInfo));
+          localStorage.setItem('userInfoLMS', JSON.stringify(userInfo));
           login(userInfo);
           navigate("/account/dashboard");
         } else {
