@@ -93,15 +93,24 @@ const EditCourse = () => {
                         <div className="mb-3">
                          <label htmlFor="title" className="form-label">Category</label>
                          <select className="form-select">
-                            <option value="">Select</option>
+                            <option value="">Select Category</option>
                          </select>
                         </div>
+
                          <div className="mb-3">
                          <label htmlFor="title" className="form-label">Lavel</label>
                          <select className="form-select">
-                            <option value="">Select</option>
+                            <option value="">Select Lavel</option>
                          </select>
                         </div>
+
+                        <div className="mb-3">
+                         <label htmlFor="title" className="form-label">Language</label>
+                         <select className="form-select">
+                            <option value="">Select Language</option>
+                         </select>
+                        </div>
+
                         <button className="btn btn-primary">Create</button>
                       </div>
                     
