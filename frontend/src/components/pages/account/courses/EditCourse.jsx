@@ -111,6 +111,12 @@ const EditCourse = () => {
                          </select>
                         </div>
 
+                         <div className="mb-3">
+                         <label htmlFor="title" className="form-label">Description</label>
+                          <textarea className="form-control" rows="5">Description</textarea>
+                        </div>
+
+                          
                         <button className="btn btn-primary">Create</button>
                       </div>
                     
